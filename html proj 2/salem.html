@@ -4,108 +4,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+
+    <title>Ayoub | Portfolio</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <h1>My Portfolio</h1>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
 
-            <ul>
+            <h1 class="logo">Ayoub.</h1>
+
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
         </nav>
     </header>
+
 
     <main>
 
         <!-- Home Section -->
-        <section id="home">
-            <h2>Home</h2>
+        <section id="home" class="hero">
 
-            <p>
-                Hello! My name is Ayoub. I am a software engineering student
-                interested in web development, artificial intelligence, and
-                data science.
-            </p>
+            <div class="hero-content">
 
-            <p>
-                Welcome to my personal portfolio.
-            </p>
+                <p class="welcome">Hello, I'm</p>
 
-            <!-- Video -->
-            <video width="500" controls>
-                <source src="portfolio-video.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
+                <h2>Ayoub Melki</h2>
 
-            <!-- Audio -->
-            <audio controls>
-                <source src="introduction.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+                <h3>Software Engineering Student</h3>
+
+                <p>
+                    I am interested in software development,
+                    artificial intelligence, and data science.
+                </p>
+
+                <a class="button" href="#contact">
+                    Contact Me
+                </a>
+
+                <!-- Video -->
+                <div class="media">
+                    <h3>My Introduction Video</h3>
+
+                    <video width="500" controls>
+                        <source src="portfolio-video.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+
+                <!-- Audio -->
+                <div class="media">
+                    <h3>My Introduction Audio</h3>
+
+                    <audio controls>
+                        <source src="introduction.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+            </div>
+
         </section>
 
 
         <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
+        <section id="about" class="section about">
 
-            <p>
+            <h2 class="section-title">About Me</h2>
+
+            <p class="section-text">
                 I am a software engineering student passionate about
-                programming and technology. I enjoy building applications
-                and learning new technologies.
+                programming, artificial intelligence and building
+                useful software applications.
             </p>
 
             <h3>My Skills</h3>
 
-            <ul>
+            <ul class="skills-list">
                 <li>Python</li>
                 <li>HTML</li>
                 <li>JavaScript</li>
                 <li>React</li>
                 <li>Machine Learning</li>
+                <li>Data Science</li>
             </ul>
+
         </section>
 
 
         <!-- Work Section -->
-        <section id="work">
-            <h2>My Work</h2>
+        <section id="work" class="section work">
 
-            <article>
-                <h3>AI Project</h3>
-                <p>
-                    A machine learning project designed to analyze data
-                    and make predictions.
-                </p>
-            </article>
+            <h2 class="section-title">My Work</h2>
 
-            <article>
-                <h3>Web Application</h3>
-                <p>
-                    A web application created using HTML, CSS, JavaScript,
-                    and React.
-                </p>
-            </article>
+            <div class="projects">
 
-            <article>
-                <h3>Python Project</h3>
-                <p>
-                    A Python application created to solve a practical problem.
-                </p>
-            </article>
+                <article class="project">
+                    <h3>AI Project</h3>
+
+                    <p>
+                        A machine learning project designed to analyze
+                        data and make predictions.
+                    </p>
+
+                    <a href="#contact">Learn More</a>
+                </article>
+
+
+                <article class="project">
+                    <h3>Web Application</h3>
+
+                    <p>
+                        A web application created using HTML,
+                        JavaScript and React.
+                    </p>
+
+                    <a href="#contact">Learn More</a>
+                </article>
+
+
+                <article class="project">
+                    <h3>Python Project</h3>
+
+                    <p>
+                        A Python application created to solve
+                        a practical problem.
+                    </p>
+
+                    <a href="#contact">Learn More</a>
+                </article>
+
+            </div>
+
 
             <h3>Technologies Used</h3>
 
-            <table border="1">
+            <table class="projects-table">
+
                 <thead>
                     <tr>
                         <th>Project</th>
@@ -115,6 +160,7 @@
                 </thead>
 
                 <tbody>
+
                     <tr>
                         <td>AI Project</td>
                         <td>Python</td>
@@ -129,31 +175,38 @@
 
                     <tr>
                         <td>Portfolio</td>
-                        <td>HTML</td>
+                        <td>HTML & CSS</td>
                         <td>2026</td>
                     </tr>
+
                 </tbody>
+
             </table>
+
         </section>
 
 
         <!-- Resume Section -->
-        <section id="resume">
-            <h2>Resume</h2>
+        <section id="resume" class="section resume">
+
+            <h2 class="section-title">Resume</h2>
 
             <h3>Education</h3>
 
             <ol>
                 <li>
-                    <strong>Software Engineering</strong> -
+                    <strong>Software Engineering</strong>
+                    <br>
                     Engineering School
                 </li>
 
                 <li>
-                    <strong>Preparatory Classes</strong> -
+                    <strong>Preparatory Classes</strong>
+                    <br>
                     Mathematics, Physics and Computer Science
                 </li>
             </ol>
+
 
             <h3>Experience</h3>
 
@@ -163,62 +216,77 @@
                 <li>Programming Instructor</li>
             </ul>
 
-            <p>
-                <a href="resume.pdf">Download my resume</a>
-            </p>
+            <a class="button" href="resume.pdf">
+                Download Resume
+            </a>
+
         </section>
 
 
         <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
+        <section id="contact" class="section contact">
 
-            <form action="#" method="post">
+            <h2 class="section-title">Contact Me</h2>
 
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+            <form class="contact-form" action="#" method="post">
 
-                <br>
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                >
 
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your email"
+                    required
+                >
 
-                <br>
+                <label for="subject">Subject</label>
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Subject"
+                >
 
-                <div>
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
+                <label for="message">Message</label>
 
-                <br>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message..."
+                ></textarea>
 
-                <div>
-                    <label for="message">Message:</label>
-                    <br>
-                    <textarea id="message" name="message" rows="6" cols="40"></textarea>
-                </div>
-
-                <br>
-
-                <button type="submit">Send Message</button>
+                <button type="submit">
+                    Send Message
+                </button>
 
             </form>
+
         </section>
 
     </main>
 
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    <footer class="footer">
 
         <p>
-            <a href="#home">Back to top</a>
+            &copy; 2026 Ayoub Melki. All rights reserved.
         </p>
+
+        <a href="#home">
+            Back to top
+        </a>
+
     </footer>
 
 </body>
