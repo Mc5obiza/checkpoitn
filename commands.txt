@@ -1,0 +1,88 @@
+melki@MSI MINGW64 ~/OneDrive/Desktop
+$ mkdir learn_git
+
+melki@MSI MINGW64 ~/OneDrive/Desktop
+$ cd learn_git/
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git
+$ touch third.txt
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git
+$ git init
+Initialized empty Git repository in C:/Users/melki/OneDrive/Desktop/learn_git/.git/
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git add .
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git commit -m "adding third.txt"
+[master (root-commit) f571e5e] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git log
+commit f571e5e1bd060b7886d09de7bb9d8bb993ddc943 (HEAD -> master)
+Author: Melki Ayoub <melkiayoub724@gmail.com>
+Date:   Mon Aug 17 17:52:41 2026 +0100
+
+    <U+0096>adding third.txt
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ touch fourth.txt
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git add fourth.txt
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git commit -m "adding fourth.txt"
+[master 8e1dfcd] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git rm -f third.txt
+rm 'third.txt'
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git add .
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git commit -m "removing third.tx"
+[master f6c7705] removing third.tx
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git log
+commit f6c7705efcbb8aa1c9ac6dd6a0336b43708292e9 (HEAD -> master)
+Author: Melki Ayoub <melkiayoub724@gmail.com>
+Date:   Mon Aug 17 17:56:37 2026 +0100
+
+    removing third.tx
+
+commit 8e1dfcde60236a72e2258407556d87343cc5246e
+Author: Melki Ayoub <melkiayoub724@gmail.com>
+Date:   Mon Aug 17 17:56:10 2026 +0100
+
+    adding fourth.txt
+
+commit f571e5e1bd060b7886d09de7bb9d8bb993ddc943
+Author: Melki Ayoub <melkiayoub724@gmail.com>
+Date:   Mon Aug 17 17:52:41 2026 +0100
+
+    <U+0096>adding third.txt
+
+melki@MSI MINGW64 ~/OneDrive/Desktop
+$ cd learn_git/
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git config --global core.pager "cat"
+
+melki@MSI MINGW64 ~/OneDrive/Desktop/learn_git (master)
+$ git config --global --list
+user.email=melkiayoub724@gmail.com
+core.pager=cat
+
+
+
