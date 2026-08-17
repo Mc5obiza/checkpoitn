@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wanderlust Travel</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-compass"></i>
+            Wanderlust
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#travelNavbar"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="travelNavbar"
+        >
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#destinations">
+                        Destinations
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#tours">
+                        Tours
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="travel-hero">
+
+    <div class="container">
+
+        <div class="row justify-content-center text-center">
+
+            <div class="col-12 col-md-9 col-lg-8">
+
+                <span class="badge rounded-pill bg-info mb-3">
+                    DISCOVER THE WORLD
+                </span>
+
+                <h1>
+                    Your Next Adventure
+                    Starts Here
+                </h1>
+
+                <p>
+                    Explore breathtaking destinations,
+                    experience new cultures and create
+                    unforgettable memories.
+                </p>
+
+                <a
+                    href="#destinations"
+                    class="btn btn-primary btn-lg px-5"
+                >
+                    Explore Destinations
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DESTINATIONS ================= -->
+
+<section id="destinations" class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                EXPLORE
+            </span>
+
+            <h2>
+                Popular Destinations
+            </h2>
+
+            <p class="text-muted">
+                Find your next dream destination.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Paris -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card destination-card h-100">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Paris"
+                    >
+
+                    <div class="card-body">
+
+                        <span class="badge bg-primary mb-2">
+                            EUROPE
+                        </span>
+
+                        <h5 class="card-title">
+                            Paris, France
+                        </h5>
+
+                        <p class="card-text">
+                            Discover romantic streets, world-famous
+                            landmarks, delicious cuisine and the magic
+                            of the City of Light.
+                        </p>
+
+                        <a href="#contact" class="btn btn-outline-primary">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bali -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card destination-card h-100">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Bali"
+                    >
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success mb-2">
+                            ASIA
+                        </span>
+
+                        <h5 class="card-title">
+                            Bali, Indonesia
+                        </h5>
+
+                        <p class="card-text">
+                            Relax on tropical beaches, explore ancient
+                            temples and experience the natural beauty
+                            of the Island of the Gods.
+                        </p>
+
+                        <a href="#contact" class="btn btn-outline-primary">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- New York -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card destination-card h-100">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="New York"
+                    >
+
+                    <div class="card-body">
+
+                        <span class="badge bg-danger mb-2">
+                            AMERICA
+                        </span>
+
+                        <h5 class="card-title">
+                            New York, USA
+                        </h5>
+
+                        <p class="card-text">
+                            Experience the energy of Times Square,
+                            Central Park, Broadway and the iconic
+                            New York skyline.
+                        </p>
+
+                        <a href="#contact" class="btn btn-outline-primary">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Santorini -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card destination-card h-100">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Santorini"
+                    >
+
+                    <div class="card-body">
+
+                        <span class="badge bg-primary mb-2">
+                            EUROPE
+                        </span>
+
+                        <h5 class="card-title">
+                            Santorini, Greece
+                        </h5>
+
+                        <p class="card-text">
+                            Enjoy spectacular sunsets, whitewashed
+                            villages and the beautiful Aegean Sea.
+                        </p>
+
+                        <a href="#contact" class="btn btn-outline-primary">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tokyo -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card destination-card h-100">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Tokyo"
+                    >
+
+                    <div class="card-body">
+
+                        <span class="badge bg-warning text-dark mb-2">
+                            ASIA
+                        </span>
+
+                        <h5 class="card-title">
+                            Tokyo, Japan
+                        </h5>
+
+                        <p class="card-text">
+                            Explore futuristic neighborhoods,
+                            traditional temples and one of the world's
+                            most exciting food scenes.
+                        </p>
+
+                        <a href="#contact" class="btn btn-outline-primary">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dubai -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card destination-card h-100">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Dubai"
+                    >
+
+                    <div class="card-body">
+
+                        <span class="badge bg-dark mb-2">
+                            MIDDLE EAST
+                        </span>
+
+                        <h5 class="card-title">
+                            Dubai, UAE
+                        </h5>
+
+                        <p class="card-text">
+                            Experience futuristic architecture,
+                            luxury shopping, desert adventures and
+                            incredible skylines.
+                        </p>
+
+                        <a href="#contact" class="btn btn-outline-primary">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TOURS ================= -->
+
+<section id="tours" class="tours-section section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                OUR PACKAGES
+            </span>
+
+            <h2>
+                Choose Your Adventure
+            </h2>
+
+        </div>
+
+
+        <!-- Bootstrap Accordion -->
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-lg-9">
+
+                <div class="accordion" id="tourAccordion">
+
+
+                    <!-- Tour 1 -->
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#tourOne"
+                            >
+
+                                European Discovery — 7 Days
+
+                            </button>
+
+                        </h2>
+
+
+                        <div
+                            id="tourOne"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#tourAccordion"
+                        >
+
+                            <div class="accordion-body">
+
+                                <p>
+                                    Explore Paris, Rome and Barcelona
+                                    in one unforgettable European adventure.
+                                    Enjoy guided tours, local cuisine and
+                                    comfortable accommodation.
+                                </p>
+
+                                <a href="#contact">
+                                    View Details →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Tour 2 -->
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#tourTwo"
+                            >
+
+                                Tropical Escape — 10 Days
+
+                            </button>
+
+                        </h2>
+
+
+                        <div
+                            id="tourTwo"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#tourAccordion"
+                        >
+
+                            <div class="accordion-body">
+
+                                <p>
+                                    Spend ten relaxing days exploring
+                                    Bali's beaches, temples, waterfalls
+                                    and tropical landscapes.
+                                </p>
+
+                                <a href="#contact">
+                                    View Details →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Tour 3 -->
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#tourThree"
+                            >
+
+                                Asian Adventure — 12 Days
+
+                            </button>
+
+                        </h2>
+
+
+                        <div
+                            id="tourThree"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#tourAccordion"
+                        >
+
+                            <div class="accordion-body">
+
+                                <p>
+                                    Discover Tokyo, Kyoto and Osaka while
+                                    experiencing Japanese culture, food,
+                                    technology and history.
+                                </p>
+
+                                <a href="#contact">
+                                    View Details →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Tour 4 -->
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#tourFour"
+                            >
+
+                                Luxury Dubai — 5 Days
+
+                            </button>
+
+                        </h2>
+
+
+                        <div
+                            id="tourFour"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#tourAccordion"
+                        >
+
+                            <div class="accordion-body">
+
+                                <p>
+                                    Experience five days of luxury,
+                                    desert adventures, incredible
+                                    architecture and unforgettable dining.
+                                </p>
+
+                                <a href="#contact">
+                                    View Details →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Plan Your Trip
+            </h2>
+
+            <p class="text-muted">
+                Tell us where you want to go and we'll help
+                you plan the perfect adventure.
+            </p>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-md-9 col-lg-7">
+
+                <form class="contact-form">
+
+
+                    <!-- Name -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="travelName"
+                            class="form-label"
+                        >
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="travelName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="travelEmail"
+                            class="form-label"
+                        >
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="travelEmail"
+                            placeholder="name@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Destination -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="destination"
+                            class="form-label"
+                        >
+                            Destination of Interest
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="destination"
+                            required
+                        >
+
+                            <option selected disabled>
+                                Choose a destination
+                            </option>
+
+                            <option>
+                                Paris
+                            </option>
+
+                            <option>
+                                Bali
+                            </option>
+
+                            <option>
+                                New York
+                            </option>
+
+                            <option>
+                                Santorini
+                            </option>
+
+                            <option>
+                                Tokyo
+                            </option>
+
+                            <option>
+                                Dubai
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Message -->
+
+                    <div class="mb-4">
+
+                        <label
+                            for="travelMessage"
+                            class="form-label"
+                        >
+                            Message
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="travelMessage"
+                            rows="5"
+                            placeholder="Tell us about your dream trip..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary w-100"
+                    >
+                        Send Travel Request
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="travel-footer">
+
+    <div class="container">
+
+        <div class="row g-4 text-center text-md-start">
+
+
+            <div class="col-12 col-md-6">
+
+                <h4>
+                    <i class="bi bi-compass"></i>
+                    Wanderlust
+                </h4>
+
+                <p>
+                    Making your travel dreams a reality,
+                    one adventure at a time.
+                </p>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 text-md-end">
+
+                <h5>
+                    Follow Us
+                </h5>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="text-center">
+
+            <p class="mb-0">
+                © 2026 Wanderlust Travel Agency.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
