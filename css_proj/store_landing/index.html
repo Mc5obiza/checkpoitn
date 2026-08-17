@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Groove &amp; Grain — Turntables, Vinyl &amp; Analog Audio</title>
+
+  <!-- Google Fonts: Fraunces (display serif), Work Sans (body), Space Mono (labels/prices) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="#top" class="logo" aria-label="Groove and Grain home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        Groove&nbsp;&amp;&nbsp;Grain
+      </a>
+
+      <!-- Mobile menu toggle: pure CSS checkbox hack, no JS needed -->
+      <input type="checkbox" id="navToggle" class="nav-toggle-input" />
+      <label for="navToggle" class="nav-toggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#top">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#shop" class="nav-cta">Shop Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Side&nbsp;A · Now&nbsp;Playing</p>
+        <h1>Sound worth<br>sitting still for.</h1>
+        <p class="hero-sub">
+          Hand-picked turntables, headphones and first-press vinyl for people who
+          still believe a record deserves your full attention.
+        </p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn btn-primary">Browse the collection</a>
+          <a href="#about" class="btn btn-ghost">Our story</a>
+        </div>
+      </div>
+
+      <!-- Signature element: a spinning vinyl record with a resting tonearm -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="turntable">
+          <div class="record">
+            <div class="record-grooves"></div>
+            <div class="record-label">
+              <span>GROOVE<br>&amp; GRAIN</span>
+            </div>
+          </div>
+          <div class="tonearm"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT SECTION ============ -->
+    <section class="shop" id="shop">
+      <div class="section-head">
+        <p class="eyebrow">The&nbsp;Collection</p>
+        <h2>Four things worth unboxing slowly</h2>
+        <p class="section-sub">
+          Every piece here is tested on our own shop floor before it earns a spot in the catalog.
+        </p>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- Product 1 -->
+        <article class="product-card">
+          <div class="product-art" style="--disc: var(--rust);">
+            <img src="https://images.unsplash.com/photo-1615751072497-5f5169febe17?w=500&auto=format&fit=crop&q=60" alt="Wavelength MK1 turntable on a wooden console" loading="lazy">
+            <span class="product-window"></span>
+          </div>
+          <div class="product-body">
+            <div class="product-title-row">
+              <h3>Wavelength&nbsp;MK1</h3>
+              <span class="price-tag">$429</span>
+            </div>
+            <p>A belt-driven turntable with a solid walnut plinth and a cartridge tuned for warmth over sparkle.</p>
+            <a href="#" class="btn btn-play">Shop Now</a>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card">
+          <div class="product-art" style="--disc: var(--amber);">
+            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&auto=format&fit=crop&q=60" alt="Analog Ear over-ear headphones" loading="lazy">
+            <span class="product-window"></span>
+          </div>
+          <div class="product-body">
+            <div class="product-title-row">
+              <h3>Analog&nbsp;Ear</h3>
+              <span class="price-tag">$189</span>
+            </div>
+            <p>Open-back headphones with hand-finished cups, built for long liner-note-reading sessions.</p>
+            <a href="#" class="btn btn-play">Shop Now</a>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card">
+          <div class="product-art" style="--disc: var(--moss);">
+            <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=500&auto=format&fit=crop&q=60" alt="Golden Hour LP vinyl record sleeve" loading="lazy">
+            <span class="product-window"></span>
+          </div>
+          <div class="product-body">
+            <div class="product-title-row">
+              <h3>Golden&nbsp;Hour&nbsp;LP</h3>
+              <span class="price-tag">$34</span>
+            </div>
+            <p>A 180-gram first pressing, cut warm and wide. Includes a fold-out sleeve with session notes.</p>
+            <a href="#" class="btn btn-play">Shop Now</a>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card">
+          <div class="product-art" style="--disc: var(--rust);">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop&q=60" alt="Cabinet 12 standing speaker in a living room" loading="lazy">
+            <span class="product-window"></span>
+          </div>
+          <div class="product-body">
+            <div class="product-title-row">
+              <h3>Cabinet&nbsp;12</h3>
+              <span class="price-tag">$560</span>
+            </div>
+            <p>A single full-range driver in a hand-jointed cabinet, voiced for small rooms and late nights.</p>
+            <a href="#" class="btn btn-play">Shop Now</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / STORY ============ -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div class="about-copy">
+          <p class="eyebrow">Side&nbsp;B · The&nbsp;Story</p>
+          <h2>Started in a garage, still run like one.</h2>
+          <p>
+            Groove &amp; Grain began as a stall of secondhand turntables at a Sunday market.
+            Ten years on, we still test every piece by hand and buy in small batches, because
+            a shop that moves slowly tends to get the details right.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">years&nbsp;trading</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">1,200</span>
+            <span class="stat-label">turntables&nbsp;rebuilt</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">bench&nbsp;tested</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER STRIP ============ -->
+    <section class="newsletter">
+      <div class="newsletter-inner">
+        <div>
+          <h2>Get the next pressing first.</h2>
+          <p>One short email a month. New arrivals, restocks, nothing else.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="return false;">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="you@email.com" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="logo logo-light">
+          <span class="logo-mark" aria-hidden="true"></span>
+          Groove&nbsp;&amp;&nbsp;Grain
+        </a>
+        <p>Analog audio, chosen slowly.<br>Based in Sousse, open online everywhere.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#shop">Turntables</a>
+        <a href="#shop">Headphones</a>
+        <a href="#shop">Vinyl</a>
+        <a href="#shop">Speakers</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">Our story</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Shipping &amp; returns</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Say hello</h4>
+        <a href="mailto:hello@grooveandgrain.shop">hello@grooveandgrain.shop</a>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter / X">X</a>
+          <a href="#" aria-label="Pinterest">PIN</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Groove &amp; Grain. All rights reserved.</p>
+      <p>Placeholder store built for demonstration purposes.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

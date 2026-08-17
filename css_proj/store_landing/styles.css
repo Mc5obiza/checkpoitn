@@ -1,0 +1,679 @@
+/* =========================================================
+   GROOVE & GRAIN — Store landing page
+   Design tokens first, then layout, then components,
+   then responsive overrides at the bottom.
+   ========================================================= */
+
+:root {
+  /* --- Color tokens (record-store palette) --- */
+  --ink: #211d1a;        /* near-black warm charcoal — primary background */
+  --ink-soft: #2b2622;   /* slightly lighter panel background */
+  --paper: #f0e9dc;      /* warm parchment — text on dark, light section bg */
+  --paper-dim: #cfc6b4;  /* muted paper for secondary text on dark */
+  --amber: #e2a63b;      /* vinyl label gold — primary accent */
+  --rust: #bd5233;       /* record-sleeve red — secondary accent */
+  --moss: #5c6b4f;       /* faded shop-carpet green — tertiary accent */
+  --line: rgba(240, 233, 220, 0.14);
+
+  /* --- Type tokens --- */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Work Sans", -apple-system, Segoe UI, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+
+  /* --- Layout tokens --- */
+  --max-width: 1200px;
+  --radius: 6px;
+}
+
+/* ---------- Reset & base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0 0 0.4em;
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+p { margin: 0 0 1em; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--rust);
+  margin-bottom: 0.75em;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .record { animation: none !important; }
+  * { transition: none !important; }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.6em;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--ink);
+}
+.btn-primary:hover { background: #ecb457; }
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--paper);
+}
+.hero .btn-ghost { border-color: rgba(33,29,26,0.25); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--rust); color: var(--rust); }
+
+/* "Play"-style button used on product cards */
+.btn-play {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.7em 1.4em;
+  font-size: 0.88rem;
+  border-radius: 999px;
+}
+.btn-play::before {
+  content: "▶";
+  font-size: 0.7em;
+}
+.btn-play:hover { background: var(--rust); }
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(33, 29, 26, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--paper);
+}
+
+.logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, var(--amber) 0 25%, var(--ink) 26% 40%, var(--amber) 41% 100%);
+  flex-shrink: 0;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+.site-nav a {
+  color: var(--paper-dim);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+.site-nav a:hover { color: var(--amber); }
+
+.nav-cta {
+  background: var(--amber);
+  color: var(--ink) !important;
+  padding: 0.5em 1.1em;
+  border-radius: 999px;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: #ecb457 !important; }
+
+/* Hamburger toggle — pure CSS via a hidden checkbox + label, no JS.
+   .nav-toggle-input is the checkbox; .nav-toggle is its label (the icon);
+   checking it reveals #siteNav through the sibling selector below. */
+.nav-toggle-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--paper);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Animate the hamburger into an "X" when the menu is open */
+.nav-toggle-input:checked + .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle-input:checked + .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle-input:checked + .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  background: var(--paper);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  letter-spacing: -0.01em;
+}
+
+.hero-sub {
+  max-width: 40ch;
+  color: #45403a;
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.8rem;
+  flex-wrap: wrap;
+}
+
+/* --- Signature element: spinning turntable --- */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.turntable {
+  position: relative;
+  width: min(340px, 80vw);
+  height: min(340px, 80vw);
+}
+
+.record {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle at center,
+      #14110f 0px, #14110f 2px,
+      #2a2521 3px, #2a2521 4px);
+  box-shadow: 0 25px 50px -12px rgba(33,29,26,0.45);
+  position: relative;
+  animation: spin 9s linear infinite;
+}
+
+.record-grooves {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, transparent 0 27%, rgba(0,0,0,0.15) 27% 27.5%, transparent 27.5% 100%);
+}
+
+.record-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34%;
+  height: 34%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.record-label span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.record-label::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  border-radius: 50%;
+}
+
+.tonearm {
+  position: absolute;
+  top: -6%;
+  right: -8%;
+  width: 42%;
+  height: 5px;
+  background: var(--ink);
+  border-radius: 4px;
+  transform-origin: top right;
+  transform: rotate(28deg);
+}
+.tonearm::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 22px;
+  height: 22px;
+  background: var(--ink);
+  border-radius: 50%;
+}
+.tonearm::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  background: var(--rust);
+  border-radius: 2px;
+  transform: rotate(28deg);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   SHOP / PRODUCT SECTION
+   ========================================================= */
+.shop {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 5rem 1.5rem;
+}
+
+.section-head {
+  max-width: var(--max-width);
+  margin: 0 auto 3rem;
+}
+.section-head h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  max-width: 18ch;
+}
+.section-sub {
+  color: var(--paper-dim);
+  max-width: 48ch;
+}
+
+.product-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.product-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--amber);
+}
+
+.product-art {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.product-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Die-cut circular "sleeve window" revealing a colored disc — signature detail
+   echoed from real vinyl packaging, reused at product-card scale. */
+.product-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--disc, var(--amber));
+  box-shadow: 0 0 0 3px rgba(240,233,220,0.85);
+}
+.product-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 18%;
+  height: 18%;
+  background: var(--ink);
+  border-radius: 50%;
+}
+
+.product-body {
+  padding: 1.3rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+.product-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.product-title-row h3 {
+  font-size: 1.15rem;
+}
+
+.price-tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.product-body p {
+  color: var(--paper-dim);
+  font-size: 0.92rem;
+  flex-grow: 1;
+}
+
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+.about {
+  background: var(--paper);
+  padding: 5.5rem 1.5rem;
+}
+.about-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.about-copy h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  max-width: 16ch;
+}
+.about-copy p { max-width: 52ch; color: #45403a; }
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid rgba(33,29,26,0.15);
+  padding-top: 1.5rem;
+}
+.stat { display: flex; flex-direction: column; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--rust);
+}
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b6459;
+}
+
+/* =========================================================
+   NEWSLETTER STRIP
+   ========================================================= */
+.newsletter {
+  background: var(--rust);
+  color: var(--paper);
+  padding: 3.5rem 1.5rem;
+}
+.newsletter-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.newsletter h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.2em;
+}
+.newsletter p { margin: 0; color: rgba(240,233,220,0.85); }
+
+.newsletter-form {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.newsletter-form input {
+  padding: 0.85em 1.1em;
+  border-radius: 999px;
+  border: 1.5px solid rgba(240,233,220,0.4);
+  background: rgba(240,233,220,0.08);
+  color: var(--paper);
+  font-family: var(--font-body);
+  min-width: 220px;
+}
+.newsletter-form input::placeholder { color: rgba(240,233,220,0.6); }
+.newsletter-form .btn-primary { background: var(--ink); color: var(--paper); }
+.newsletter-form .btn-primary:hover { background: #14110f; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  background: var(--ink);
+  color: var(--paper-dim);
+  padding: 4rem 1.5rem 1.5rem;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+.footer-brand p { font-size: 0.9rem; max-width: 26ch; }
+.logo-light { color: var(--paper); margin-bottom: 0.8rem; }
+
+.footer-col h4 {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--paper);
+  margin-bottom: 0.9rem;
+}
+.footer-col a {
+  display: block;
+  font-size: 0.92rem;
+  padding: 0.25rem 0;
+  color: var(--paper-dim);
+  transition: color 0.15s ease;
+}
+.footer-col a:hover { color: var(--amber); }
+
+.socials {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+.socials a {
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+}
+.socials a:hover { border-color: var(--amber); }
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 3rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   RESPONSIVE — tablet
+   ========================================================= */
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 3.5rem;
+    text-align: left;
+  }
+  .hero-visual { order: -1; margin-bottom: 1rem; }
+  .turntable { width: min(260px, 60vw); height: min(260px, 60vw); }
+
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .about-inner { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: repeat(3, 1fr); }
+
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+/* =========================================================
+   RESPONSIVE — mobile
+   ========================================================= */
+@media (max-width: 640px) {
+  .header-inner { padding: 0.8rem 1.2rem; }
+
+  .nav-toggle { display: flex; }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  /* Checked state of the hidden checkbox drives the open menu — pure CSS */
+  .nav-toggle-input:checked ~ .site-nav {
+    max-height: 320px;
+    padding: 0.5rem 0 1rem;
+  }
+  .site-nav a { padding: 0.8rem 1.5rem; width: 100%; }
+  .site-nav .nav-cta { margin: 0.5rem 1.5rem; width: calc(100% - 3rem); justify-content: center; }
+
+  .hero { padding: 2.5rem 1.2rem 3.5rem; gap: 2rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { justify-content: center; }
+
+  .shop, .about, .newsletter, .site-footer { padding-left: 1.2rem; padding-right: 1.2rem; }
+
+  .product-grid { grid-template-columns: 1fr; }
+
+  .about-stats { grid-template-columns: 1fr; gap: 1rem; }
+
+  .newsletter-inner { flex-direction: column; align-items: flex-start; }
+  .newsletter-form { width: 100%; }
+  .newsletter-form input { flex: 1; }
+
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; }
+}
