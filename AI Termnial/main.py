@@ -7,7 +7,12 @@ api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("A777AAA")
 def call_ai():
-    client = OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
+    try:
+        client = OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
+    except Exception as e:
+        print(f"Error occurred while initializing OpenAI client: {e}")
+        return
+
     message_history=[]
     token_spent = {"prompt_tokens":0,"completion_tokens":0,"total_tokens":0}
     print("Hi!! How can i help you?")
@@ -29,11 +34,16 @@ def call_ai():
                 print("Unrecognized Command")
         else:
             message_history.append({"role":"user","content":user_input})
-            stream = client.chat.completions.create(
-                model = "openrouter/free",
-                messages = message_history,
-                stream=True
-            )
+            try:
+                stream = client.chat.completions.create(
+                    model = "openrouter/free",
+                    messages = message_history,
+                    stream=True
+                )
+            except Exception as e:
+                print(f"Error occurred while fetching AI response: {e}")
+                return
+
             response = ""
             for chunk in stream:
                 content = chunk.choices[0].delta.content
