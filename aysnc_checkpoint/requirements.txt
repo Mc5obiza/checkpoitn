@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+openai
+python-dotenv
+
+# Testing
+httpx
+pytest
+pytest-asyncio
